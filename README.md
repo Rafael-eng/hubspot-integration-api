@@ -36,16 +36,16 @@
 ## Endpoints
 
   #### Para autenticação: 
-    
-    **GET**
-    https://prompt-vervet-one.ngrok-free.app/api/oauth/authorize
-    
-    Este endpoint retorna um link para que você possa realizar a autenticação na plataforma do HubSpot.
-    Após concluir esse processo, via callback uma mensagem de sucesso será exibida juntamente com o token gerado.
-    
-    Importante:
-    O token exibido é apenas informativo — você pode simplesmente fechar a página após visualizar a mensagem de sucesso.
-    A partir desse momento, sua aplicação já estará autenticada e pronta para utilizar o endpoint de criação de contatos normalmente.
+  
+  **GET**
+  https://prompt-vervet-one.ngrok-free.app/api/oauth/authorize
+  
+  Este endpoint retorna um link para que você possa realizar a autenticação na plataforma do HubSpot.
+  Após concluir esse processo, via callback uma mensagem de sucesso será exibida juntamente com o token gerado.
+  
+  Importante:
+  O token exibido é apenas informativo — você pode simplesmente fechar a página após visualizar a mensagem de sucesso.
+  A partir desse momento, sua aplicação já estará autenticada e pronta para utilizar o endpoint de criação de contatos normalmente.
 
 #### Para criar um contato:
 
@@ -54,14 +54,14 @@
   
   Limitei o uso da api pra criar contatos utilizando somente com os atributos(email, lastname, firstname), como no exemplo de requisição abaixo:
   
-  curl --location --request POST 'https://prompt-vervet-one.ngrok-free.app/api/contacts' \
-  --header 'Content-Type: application/json' \
-  --data-raw '{
-    "properties": {
-      "email": "teste@gmail.com",
-      "lastname": "testesobrenome",
-      "firstname": "teste"
-    }
-  }'
+    curl --location --request POST 'https://prompt-vervet-one.ngrok-free.app/api/contacts' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+      "properties": {
+        "email": "teste@gmail.com",
+        "lastname": "testesobrenome",
+        "firstname": "teste"
+      }
+    }'
   
   
