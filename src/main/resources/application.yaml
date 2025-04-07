@@ -1,0 +1,30 @@
+spring:
+    application:
+        name: HubSpotIntegration
+server:
+    port: 8080
+    address: 0.0.0.0
+    servlet:
+        context-path: /api
+
+hubspot:
+    client:
+        id: ${HUBSPOT_CLIENT_ID}
+        secret: ${HUBSPOT_CLIENT_SECRET}
+    redirect:
+        uri: https://prompt-vervet-one.ngrok-free.app/api/oauth/callback
+    auth:
+        url: https://app.hubspot.com/oauth/authorize
+    token:
+        url: https://api.hubapi.com/oauth/v1/token
+    api:
+        url: https://api.hubapi.com
+        endpoint:
+            create-contact: /crm/v3/objects/contacts
+    scope:
+        crm.objects.contacts.read
+        crm.objects.contacts.write
+        oauth
+logging:
+    level:
+        root: INFO
