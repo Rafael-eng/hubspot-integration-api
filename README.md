@@ -4,15 +4,12 @@
 Em uma situação normal o certo seria seguir o .env-example e criar seu proprio .env**
 
 ## Tecnologias Utilizadas
-Java 17
 
-Maven 3.9.6
-
-Ngrok
-
-Docker
-
-Docker Compose
+- Java 17
+- Maven 3.9.6
+- Ngrok
+- Docker
+- Docker Compose
 
 ## Pré-requisitos
 
