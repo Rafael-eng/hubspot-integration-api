@@ -1,3 +1,7 @@
+##Observação:
+**  Obs: Deixei um arquivo `.env` montado com informações sensíveis relacionadas a autenticação, prática que nunca deve ser feita e estou deixando aqui apenas para facilitar o teste, caso quem execute não possua uma aplicação criada com as informações disponibilizadas neste documento.
+**
+
 ## Pré-requisitos
 
   - Docker instalado
@@ -14,8 +18,6 @@
   
   Em seguida, edite o arquivo `.env` com os valores apropriados para seu ambiente.
   
-  Obs: deixei a variável **NGROK_AUTHTOKEN** setada no `.env-example` para facilitar a execução do projeto, então basta copiá-la para o `.env` que irá criar.
-
 ## Build da aplicação
 
   Para construir as imagens definidas no `docker-compose.yml`, execute:
