@@ -3,6 +3,17 @@
 **Deixei um arquivo `.env` montado com informações sensíveis relacionadas a autenticação, prática que nunca deve ser feita e estou deixando aqui apenas para facilitar o teste, caso quem execute não possua uma aplicação criada com as informações disponibilizadas neste documento.
 Em uma situação normal o certo seria seguir o .env-example e criar seu proprio .env**
 
+## Tecnologias Utilizadas
+Java 17
+
+Maven 3.9.6
+
+Ngrok
+
+Docker
+
+Docker Compose
+
 ## Pré-requisitos
 
   - Docker instalado
