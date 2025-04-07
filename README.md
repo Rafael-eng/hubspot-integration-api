@@ -24,7 +24,7 @@ docker-compose build
 
 ## Executando a aplicação
 
-Para iniciar a aplicação e o ngrok(necessário pois o **callback** precisa ser realizado com uma url https)
+Para iniciar a aplicação e o ngrok(necessário pois o **callback** precisa ser realizado com uma url https):
 
 docker-compose up
 
