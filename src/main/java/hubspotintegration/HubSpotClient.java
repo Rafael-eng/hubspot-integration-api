@@ -2,6 +2,7 @@ package hubspotintegration;
 
 import hubspotintegration.exception.HubSpotException;
 import hubspotintegration.response.TokenResponse;
+import hubspotintegration.utils.RateLimitUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,15 +40,17 @@ public class HubSpotClient {
 
     @Autowired
     private RestClient restClient;
-
     public <T, B> T post(String uri, B body, Class<T> responseType, String token) {
+        RateLimitUtils.validateRateLimit();
+
         try {
-            return restClient.post()
-                    .uri(apiUrl.concat(uri))
-                    .header("Authorization", "Bearer " + token)
-                    .body(body)
-                    .retrieve()
-                    .body(responseType);
+            return
+                    restClient.post()
+                            .uri(apiUrl.concat(uri))
+                            .header("Authorization", "Bearer " + token)
+                            .body(body)
+                            .retrieve()
+                            .body(responseType);
         } catch (HttpClientErrorException ex) {
             throw new HubSpotException("Erro ao comunicar com API externa", ex.getResponseBodyAsString(), ex.getStatusCode());
         } catch (RestClientResponseException ex) {

@@ -1,3 +1,7 @@
 package hubspotintegration.request;
 
-public record ContactProperties(String email, String lastname, String firstname) {}
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record ContactProperties(@JsonProperty("email") String  email,
+                                @JsonProperty("lastname")String lastName,
+                                @JsonProperty("firstname")String firstName) {}

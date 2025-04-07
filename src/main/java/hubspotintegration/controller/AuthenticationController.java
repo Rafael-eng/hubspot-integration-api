@@ -23,7 +23,8 @@ public class AuthenticationController {
 
     @GetMapping("/callback")
     public ResponseEntity<String> callback(@RequestParam("code") String code) {
-        return ResponseEntity.ok(service.getToken(code));
+        String token = service.getToken(code);
+        return ResponseEntity.ok("Usuário autenticado com sucesso. Token: ".concat(token));
     }
 
 }
