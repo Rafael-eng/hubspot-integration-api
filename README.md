@@ -52,7 +52,7 @@
   **POST**
   https://prompt-vervet-one.ngrok-free.app/api/contacts
   
-  Limitei o uso da api pra criar contatos utilizando somente com os atributos(email, lastname, firstname), como no exemplo de requisição abaixo:
+  Limitei o uso da api pra criar contatos utilizando somente os atributos `email, lastname, firstname`, como no exemplo de requisição abaixo:
   
     curl --location --request POST 'https://prompt-vervet-one.ngrok-free.app/api/contacts' \
     --header 'Content-Type: application/json' \
