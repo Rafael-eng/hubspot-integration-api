@@ -28,10 +28,40 @@ Para iniciar a aplicação e o ngrok(necessário pois o **callback** precisa ser
 
 docker-compose up
 
-Esse comando iniciará os serviços definidos no `docker-compose.yml`.
-
 ## Acessando a aplicação
 
-Como ja deixei o ngrok com um token pré-setado, a URL utilizada para a api será: https://prompt-vervet-one.ngrok-free.app
+Como já deixei o ngrok com um token pré-setado, basta utilizar os endpoints com a seguinte URL: https://prompt-vervet-one.ngrok-free.app
+
+
+## Endpoints
+
+### Para autenticação: 
+
+**GET**
+https://prompt-vervet-one.ngrok-free.app/api/oauth/authorize
+
+Este endpoint retorna um link para que você possa realizar a autenticação na plataforma do HubSpot.
+Após concluir esse processo, via callback uma mensagem de sucesso será exibida juntamente com o token gerado.
+
+Importante:
+O token exibido é apenas informativo — você pode simplesmente fechar a página após visualizar a mensagem de sucesso.
+A partir desse momento, sua aplicação já estará autenticada e pronta para utilizar o endpoint de criação de contatos normalmente.
+
+### Para criar um contato
+
+**POST**
+https://prompt-vervet-one.ngrok-free.app/api/contacts
+
+Limitei o uso da api pra criar contatos utilizando somente com os atributos(email, lastname, firstname), como no exemplo de requisição abaixo:
+
+curl --location --request POST 'https://prompt-vervet-one.ngrok-free.app/api/contacts' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "properties": {
+    "email": "teste@gmail.com",
+    "lastname": "testesobrenome",
+    "firstname": "teste"
+  }
+}'
 
 
